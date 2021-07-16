@@ -1,13 +1,13 @@
 package com.javaex.basics;
 
-//JVM¿¡¼­ ÁøÀÔÁ¡À» Ã£¾Æ ½ÇÇà
+//JVMì—ì„œ ì§„ì…ì ì„ ì°¾ì•„ ì‹¤í–‰
 public class Types {
 	static final int SPEED_LIMIT = 100;
 
 	public static void main(String[] args) {
 
-		// º¯¼ö ¿¹Á¦ & µ¥ÀÌÅÍ Å¸ÀÔ¿¡ °ü·ÃµÈ ¿¹Á¦¸¦ Å×½ºÆ® ÇÒ °ÍÀÓ.
-//		varEx(); // ¾Æ·¡ ¸í½ÃµÈ ¸Ş¼­µå¸¦ ½ÇÇà
+		// ë³€ìˆ˜ ì˜ˆì œ & ë°ì´í„° íƒ€ì…ì— ê´€ë ¨ëœ ì˜ˆì œë¥¼ í…ŒìŠ¤íŠ¸ í•  ê²ƒì„.
+//		varEx(); // ì•„ë˜ ëª…ì‹œëœ ë©”ì„œë“œë¥¼ ì‹¤í–‰
 //		integerEx();
 //		floatDoubleEx();
 //		booleanEx();
@@ -17,87 +17,87 @@ public class Types {
 		castingEx();
 	}
 
-	// ¸í½ÃÀû Çüº¯È¯ (casting : explicit casting)
+	// ëª…ì‹œì  í˜•ë³€í™˜ (casting : explicit casting)
 	private static void castingEx() {
-		// Ç¥Çö ¹üÀ§°¡ ³ĞÀº ÀÚ·áÇü -> Á¼Àº ÀÚ·áÇüÀ¸·ÎÀÇ º¯È¯
-		// °­Á¦·Î Å¸ÀÔ º¯È¯À» ¼öÇàÇØ¾ßÇÔ. ÀÚ·áÀÇ À¯½ÇÀÌ ÀÏ¾î³¯ ¼ö ÀÖÀ½.
-		float f = 1234567890.123456789f; // 4¹ÙÀÌÆ® ½Ç¼öÇü
+		// í‘œí˜„ ë²”ìœ„ê°€ ë„“ì€ ìë£Œí˜• -> ì¢ì€ ìë£Œí˜•ìœ¼ë¡œì˜ ë³€í™˜
+		// ê°•ì œë¡œ íƒ€ì… ë³€í™˜ì„ ìˆ˜í–‰í•´ì•¼í•¨. ìë£Œì˜ ìœ ì‹¤ì´ ì¼ì–´ë‚  ìˆ˜ ìˆìŒ.
+		float f = 1234567890.123456789f; // 4ë°”ì´íŠ¸ ì‹¤ìˆ˜í˜•
 		System.out.println(f);
-		long l = (long) f; // 8¹ÙÀÌÆ® Á¤¼öÇü -> ¼Ò¼öÁ¡ ÀÚ·áÀÇ À¯½Ç ¹ß»ı
+		long l = (long) f; // 8ë°”ì´íŠ¸ ì •ìˆ˜í˜• -> ì†Œìˆ˜ì  ìë£Œì˜ ìœ ì‹¤ ë°œìƒ
 		System.out.println(l);
-		int i = (int) l; // 4¹ÙÀÌÆ® Á¤¼öÇü
+		int i = (int) l; // 4ë°”ì´íŠ¸ ì •ìˆ˜í˜•
 		System.out.println(i);
 		System.out.println(Integer.toBinaryString(i));
-		short s = (short) i; // 2¹ÙÀÌÆ® Á¤¼öÇü -> ÀÚ·áÀÇ À¯½Ç ¹ß»ı
+		short s = (short) i; // 2ë°”ì´íŠ¸ ì •ìˆ˜í˜• -> ìë£Œì˜ ìœ ì‹¤ ë°œìƒ
 		System.out.println(Integer.toBinaryString(s));
 		System.out.println(s);
-		byte b = (byte) s; // 1¹ÙÀÌÆ® Á¤¼öÇü -> ÀÚ·áÀÇ À¯½Ç ¹ß»ı
+		byte b = (byte) s; // 1ë°”ì´íŠ¸ ì •ìˆ˜í˜• -> ìë£Œì˜ ìœ ì‹¤ ë°œìƒ
 
 		System.out.println(b);
 
 	}
 
-	// ¾Ï¹¬Àû Çüº¯È¯ (Promotion: implicit casting)
+	// ì•”ë¬µì  í˜•ë³€í™˜ (Promotion: implicit casting)
 	private static void promotionEx() {
 		// byte < short < int < long < float < double
-		// Ç¥Çö¹üÀ§ Á¼Àº ÀÚ·áÇü -> ³ĞÀº ÀÚ·áÇüÀ¸·Î ÀÚµ¿ º¯È¯¼öÇàÇÑ´Ù.
-		byte b = 25; // 1byte Á¤¼öÇü
+		// í‘œí˜„ë²”ìœ„ ì¢ì€ ìë£Œí˜• -> ë„“ì€ ìë£Œí˜•ìœ¼ë¡œ ìë™ ë³€í™˜ìˆ˜í–‰í•œë‹¤.
+		byte b = 25; // 1byte ì •ìˆ˜í˜•
 		System.out.println(b);
-		short s = b; // 2byte Á¤¼ö
+		short s = b; // 2byte ì •ìˆ˜
 		System.out.println(s);
-		int i = s; // 4byte Á¤¼ö
+		int i = s; // 4byte ì •ìˆ˜
 		System.out.println(i);
-		long l = i; // 8byte Á¤¼ö
+		long l = i; // 8byte ì •ìˆ˜
 		System.out.println(l);
-		float f = l; // 4byte ½Ç¼ö
+		float f = l; // 4byte ì‹¤ìˆ˜
 		System.out.println(f);
-		double d = f; // 8byte ½Ç¼ö
+		double d = f; // 8byte ì‹¤ìˆ˜
 		System.out.println(d);
 	}
 
-	// »ó¼ö
+	// ìƒìˆ˜
 	private static void constantEx() {
 
-		System.out.println("Á¦ÇÑ¼Óµµ : " + SPEED_LIMIT);
+		System.out.println("ì œí•œì†ë„ : " + SPEED_LIMIT);
 
 		int limit = SPEED_LIMIT;
-		System.out.println("ÇöÀç µµ·ÎÀÇ Á¦ÇÑ ¼Óµµ´Â " + limit + "ÀÔ´Ï´Ù.");
+		System.out.println("í˜„ì¬ ë„ë¡œì˜ ì œí•œ ì†ë„ëŠ” " + limit + "ì…ë‹ˆë‹¤.");
 
-		// ÄÚµåÀÇ °¡µ¶¼º°ú ÄÚµåÀÇ º¯°æÀÌ ¿ëÀÌÇØÁø´Ù.
+		// ì½”ë“œì˜ ê°€ë…ì„±ê³¼ ì½”ë“œì˜ ë³€ê²½ì´ ìš©ì´í•´ì§„ë‹¤.
 
-//		SPEED_LIMIT = 320; // º¯°æ ½Ãµµ -> ºÒ°¡
-		System.out.println("Áö±İÀº " + SPEED_LIMIT + "ÀÔ´Ï´Ù");
+//		SPEED_LIMIT = 320; // ë³€ê²½ ì‹œë„ -> ë¶ˆê°€
+		System.out.println("ì§€ê¸ˆì€ " + SPEED_LIMIT + "ì…ë‹ˆë‹¤");
 
 	}
 
 	private static void varEx() {
 		/*
-		 * º¯¼öÀÇ ½Äº°ÀÚ ±ÔÄ¢ 1. ¹®ÀÚ, ¼ıÀÚ, $, _ »ç¿ë °¡´É 2. ¼ıÀÚ·Î ½ÃÀÛÇÒ ¼ö ¾ø´Ù. 3. ¿¹¾à¾î´Â »ç¿ëÇÒ ¼ö ¾ø´Ù. 4. º¯¼ö,
-		 * ¸Ş¼­µåÀÇ ¸í¸í±ÔÄ¢Àº : camelCase
+		 * ë³€ìˆ˜ì˜ ì‹ë³„ì ê·œì¹™ 1. ë¬¸ì, ìˆ«ì, $, _ ì‚¬ìš© ê°€ëŠ¥ 2. ìˆ«ìë¡œ ì‹œì‘í•  ìˆ˜ ì—†ë‹¤. 3. ì˜ˆì•½ì–´ëŠ” ì‚¬ìš©í•  ìˆ˜ ì—†ë‹¤. 4. ë³€ìˆ˜,
+		 * ë©”ì„œë“œì˜ ëª…ëª…ê·œì¹™ì€ : camelCase
 		 */
 
-		// int age; // ¼±¾ğ, ¸Ş¸ğ¸®¿¡ ÀÌ¸§À» ºÙÀÓ.
+		// int age; // ì„ ì–¸, ë©”ëª¨ë¦¬ì— ì´ë¦„ì„ ë¶™ì„.
 		// age = 50;
-		int age = 34; // ¼±¾ğ + ÃÊ±âÈ­
+		int age = 34; // ì„ ì–¸ + ì´ˆê¸°í™”
 
-		// ÀÚ¹Ù´Â Á¤ÀûÅ¸ÀÔ ¾ğ¾îÀÌ±â ¶§¹®¿¡, ´Ù¸¥ Å¸ÀÔÀÇ µ¥ÀÌÅÍ¸¦ ´ãÀ» ¼ö ¾ø´Ù.
-		// age = 3.14; -> error ¹ß»ı
+		// ìë°”ëŠ” ì •ì íƒ€ì… ì–¸ì–´ì´ê¸° ë•Œë¬¸ì—, ë‹¤ë¥¸ íƒ€ì…ì˜ ë°ì´í„°ë¥¼ ë‹´ì„ ìˆ˜ ì—†ë‹¤.
+		// age = 3.14; -> error ë°œìƒ
 
-		// Á¶È¸ :
-		System.out.println("´ç½ÅÀÇ ³ªÀÌ´Â " + age + "»ì ÀÔ´Ï´Ù");
+		// ì¡°íšŒ :
+		System.out.println("ë‹¹ì‹ ì˜ ë‚˜ì´ëŠ” " + age + "ì‚´ ì…ë‹ˆë‹¤");
 
-		// ÇÑ¹ø¿¡ ¿©·¯ º¯¼ö¸¦ ¼±¾ğÇÒ ¶§
+		// í•œë²ˆì— ì—¬ëŸ¬ ë³€ìˆ˜ë¥¼ ì„ ì–¸í•  ë•Œ
 		int v1 = 10, v2 = 20, v3 = 30;
-		// ¿©·¯ º¯¼ö¿¡ µ¿ÀÏÇÑ °ªÀ» ÇÒ´çÇÏ°íÀÚ ÇÒ ¶§
+		// ì—¬ëŸ¬ ë³€ìˆ˜ì— ë™ì¼í•œ ê°’ì„ í• ë‹¹í•˜ê³ ì í•  ë•Œ
 		v1 = v2 = v3 = 40;
 	}
 
-	// Á¤¼öÇü µ¥ÀÌÅÍ Å¸ÀÔ
+	// ì •ìˆ˜í˜• ë°ì´í„° íƒ€ì…
 	private static void integerEx() {
 		// byte(1) < Short (2) < int(4) < long(8)
-		int intVar1, intVar2; // µÎ°³ÀÇ Á¤¼öÇü µ¥ÀÌÅÍ ¼±¾ğ
-		intVar1 = 2021; // ÃÊ±âÈ­
-//		intVar2 = 22342122212; // out of range - ÀúÀå¹üÀ§ ÃÊ°ú
+		int intVar1, intVar2; // ë‘ê°œì˜ ì •ìˆ˜í˜• ë°ì´í„° ì„ ì–¸
+		intVar1 = 2021; // ì´ˆê¸°í™”
+//		intVar2 = 22342122212; // out of range - ì €ì¥ë²”ìœ„ ì´ˆê³¼
 		System.out.println(Integer.toBinaryString(intVar1));
 
 		long longVar1, longVar2;
@@ -106,18 +106,18 @@ public class Types {
 		System.out.println(longVar1);
 		System.out.println(longVar2);
 
-		// 2Áø¼ö , 8Áø¼ö, 16Ä£¼ö
+		// 2ì§„ìˆ˜ , 8ì§„ìˆ˜, 16ì¹œìˆ˜
 		int bin, oct, hex;
-		bin = 0b1101; // 2Áø¼ö ¾Õ¿¡ 0b
-		oct = 072; // 8Áø¼ö ¾Õ¿¡ 0
-		hex = 0xFF; // 16Áø¼ö ¾Õ¿¡ 0x
+		bin = 0b1101; // 2ì§„ìˆ˜ ì•ì— 0b
+		oct = 072; // 8ì§„ìˆ˜ ì•ì— 0
+		hex = 0xFF; // 16ì§„ìˆ˜ ì•ì— 0x
 
 		System.out.println(bin);
 		System.out.println(oct);
 		System.out.println(hex);
 	}
 
-	// ½Ç¼öÇü µ¥ÀÌÅÍ Å¸ÀÔ
+	// ì‹¤ìˆ˜í˜• ë°ì´í„° íƒ€ì…
 	private static void floatDoubleEx() {
 		// float(4) < double (8)
 
@@ -127,32 +127,32 @@ public class Types {
 		System.out.println(floatVar);
 		System.out.println(doubleVar);
 
-		// Áö¼öÇ¥±â¹ı
+		// ì§€ìˆ˜í‘œê¸°ë²•
 		floatVar = 3e-6f; // 3 * 10^-6;
 		doubleVar = 3E10; // 3 * 10^10
 		System.out.println(floatVar);
 		System.out.println(doubleVar);
 
-		// ºÎµ¿¼Ò¼öÁ¡ °è»êÀÇ ¹®Á¦
-		// float, double°°Àº °æ¿ì Á¤¹Ğµµ¸¦ Æ÷±â
-		// Ç¥Çö ¹üÀ§¸¸ ³ĞÈù °Í
-		// Á¡ÀÏ ½Ç¼ö Ã³¸®¿¡´Â ÀûÇÕÇÏÁö ¾ÊÀ½.
+		// ë¶€ë™ì†Œìˆ˜ì  ê³„ì‚°ì˜ ë¬¸ì œ
+		// float, doubleê°™ì€ ê²½ìš° ì •ë°€ë„ë¥¼ í¬ê¸°
+		// í‘œí˜„ ë²”ìœ„ë§Œ ë„“íŒ ê²ƒ
+		// ì ì¼ ì‹¤ìˆ˜ ì²˜ë¦¬ì—ëŠ” ì í•©í•˜ì§€ ì•ŠìŒ.
 
 		System.out.println(0.1 * 3);
 
 	}
 
-	// ³í¸®Çü µ¥ÀÌÅÍ Å¸ÀÔ
+	// ë…¼ë¦¬í˜• ë°ì´í„° íƒ€ì…
 	private static void booleanEx() {
 		// 1byte : true or false
-		// Á¶°Ç ºĞ±â, ¹İº¹¹® µî¿¡ È°¿ë -> Áß¿äÇÑ ÀÚ·áÇü
+		// ì¡°ê±´ ë¶„ê¸°, ë°˜ë³µë¬¸ ë“±ì— í™œìš© -> ì¤‘ìš”í•œ ìë£Œí˜•
 
 		boolean b1 = true;
 		boolean b2 = false;
 
 		System.out.println(b1);
 		System.out.println(b2);
-		// ºñ±³ ¿¬»ê, ³í¸®¿¬»êÀÇ °á°ú·Î È°¿ëµÈ´Ù.
+		// ë¹„êµ ì—°ì‚°, ë…¼ë¦¬ì—°ì‚°ì˜ ê²°ê³¼ë¡œ í™œìš©ëœë‹¤.
 
 		int a = 7, b = 3;
 		boolean result = a > b;
@@ -160,18 +160,18 @@ public class Types {
 
 	}
 
-	// ¹®ÀÚÇü µ¥ÀÌÅÍ Å¸ÀÔ
+	// ë¬¸ìí˜• ë°ì´í„° íƒ€ì…
 	private static void charEx() {
-		// ºÎÈ£°¡ ¾ø´Â Á¤¼ö ÄÚµå
+		// ë¶€í˜¸ê°€ ì—†ëŠ” ì •ìˆ˜ ì½”ë“œ
 		char ch1 = 'A';
-		char ch2 = 'ÇÑ';
-//		char ch3 = "ÇÏ";
+		char ch2 = 'í•œ';
+//		char ch3 = "í•˜";
 
 		System.out.println(ch1);
 		System.out.println(ch2);
 		System.out.println(ch1 + ch2);
 
-		String str = "AÇÑ";
+		String str = "Aí•œ";
 		System.out.println(str);
 
 	}

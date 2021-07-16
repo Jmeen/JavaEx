@@ -1,16 +1,37 @@
 package com.javaex.basics;
 //JVM에서 진입점을 찾아 실행
 public class Types {
-
+	static final int SPEED_LIMIT = 100;
+	
 	public static void main(String[] args) {
+
 		// 변수 예제 & 데이터 타입에 관련된 예제를 테스트 할 것임.
 //		varEx(); // 아래 명시된 메서드를 실행
 //		integerEx();
 //		floatDoubleEx();
 //		booleanEx();
-		charEx();
+//		charEx();
+		constantEx();
+	}
+	
+	// 상수
+	private static void constantEx() {
+
+		System.out.println("제한속도 : "+SPEED_LIMIT);
+		
+		int limit = SPEED_LIMIT;
+		System.out.println("현재 도로의 제한 속도는 " + limit + "입니다.");
+		
+		//코드의 가독성과 코드의 변경이 용이해진다.
+		
+//		SPEED_LIMIT = 320; // 변경 시도 -> 불가
+		System.out.println("지금은 "+SPEED_LIMIT+"입니다");
+		
+		
 		
 	}
+	
+	
 	private static void varEx(){
 		/* 변수의 식별자 규칙
 		 * 1. 문자, 숫자, $, _ 사용 가능
@@ -34,7 +55,7 @@ public class Types {
 		// 여러 변수에 동일한 값을 할당하고자 할 때
 		v1=v2=v3 = 40;
 	}
-	
+
 	// 정수형 데이터 타입
 	private static void integerEx() {
 		// byte(1) < Short (2) < int(4) < long(8)
@@ -84,7 +105,7 @@ public class Types {
 		System.out.println(0.1 * 3);
 
 	}
-	
+
 	// 논리형 데이터 타입
 	private static void booleanEx() {
 		// 1byte : true or false
@@ -103,7 +124,6 @@ public class Types {
 		
 	}
 		
-	
 	// 문자형 데이터 타입
 	private static void charEx() {
 		// 부호가 없는 정수 코드

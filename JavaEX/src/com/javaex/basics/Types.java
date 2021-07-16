@@ -6,8 +6,8 @@ public class Types {
 		// 변수 예제 & 데이터 타입에 관련된 예제를 테스트 할 것임.
 //		varEx(); // 아래 명시된 메서드를 실행
 //		integerEx();
-		floatDoubleEx();
-
+//		floatDoubleEx();
+		booleanEx();
 		
 	}
 	private static void varEx(){
@@ -81,6 +81,24 @@ public class Types {
 		// 점일 실수 처리에는 적합하지 않음.
 		
 		System.out.println(0.1*3);
+		
+	}
+	
+	// 논리형 데이터 타입
+	private static void booleanEx() {
+		// 1byte : true or false
+		// 조건 분기, 반복문 등에 활용 -> 중요한 자료형
+		
+		boolean b1 = true;
+		boolean b2 = false;
+		
+		System.out.println(b1);
+		System.out.println(b2);
+		// 비교 연산, 논리연산의 결과로 활용된다.
+		
+		int a = 7, b=3;
+		boolean result = a>b;
+		System.out.println(result);
 		
 	}
 		

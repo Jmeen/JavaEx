@@ -5,7 +5,9 @@ public class Types {
 	public static void main(String[] args) {
 		// 변수 예제 & 데이터 타입에 관련된 예제를 테스트 할 것임.
 //		varEx(); // 아래 명시된 메서드를 실행
-		integerEx();
+//		integerEx();
+		floatDoubleEx();
+
 		
 	}
 	private static void varEx(){
@@ -55,7 +57,31 @@ public class Types {
 		System.out.println(bin);
 		System.out.println(oct);
 		System.out.println(hex);
+	}
 		
+	// 실수형 데이터 타입
+	private static void floatDoubleEx() {
+		//float(4) < double (8)
+		
+		float floatVar = 3.141592f;
+		double doubleVar = 3.141592;
+		
+		System.out.println(floatVar);
+		System.out.println(doubleVar);
+
+		//지수표기법
+		floatVar = 3e-6f; //3 * 10^-6;
+		doubleVar = 3E10; //3 * 10^10
+		System.out.println(floatVar);
+		System.out.println(doubleVar);
+		
+		// 부동소수점 계산의 문제
+		// float, double같은 경우 정밀도를 포기
+		// 표현 범위만 넓힌 것
+		// 점일 실수 처리에는 적합하지 않음.
+		
+		System.out.println(0.1*3);
 		
 	}
+		
 }

@@ -7,7 +7,8 @@ public class Types {
 //		varEx(); // 아래 명시된 메서드를 실행
 //		integerEx();
 //		floatDoubleEx();
-		booleanEx();
+//		booleanEx();
+		charEx();
 		
 	}
 	private static void varEx(){
@@ -21,10 +22,10 @@ public class Types {
 		//int age; // 선언, 메모리에 이름을 붙임.
 		//age = 50;
 		int age = 34; // 선언 + 초기화
-				
+
 		// 자바는 정적타입 언어이기 때문에, 다른 타입의 데이터를 담을 수 없다.
 		// age = 3.14; -> error 발생
-		
+
 		// 조회 :
 		System.out.println("당신의 나이는 "+age+"살 입니다");
 		
@@ -61,27 +62,27 @@ public class Types {
 		
 	// 실수형 데이터 타입
 	private static void floatDoubleEx() {
-		//float(4) < double (8)
-		
+		// float(4) < double (8)
+
 		float floatVar = 3.141592f;
 		double doubleVar = 3.141592;
-		
+
 		System.out.println(floatVar);
 		System.out.println(doubleVar);
 
-		//지수표기법
-		floatVar = 3e-6f; //3 * 10^-6;
-		doubleVar = 3E10; //3 * 10^10
+		// 지수표기법
+		floatVar = 3e-6f; // 3 * 10^-6;
+		doubleVar = 3E10; // 3 * 10^10
 		System.out.println(floatVar);
 		System.out.println(doubleVar);
-		
+
 		// 부동소수점 계산의 문제
 		// float, double같은 경우 정밀도를 포기
 		// 표현 범위만 넓힌 것
 		// 점일 실수 처리에는 적합하지 않음.
-		
-		System.out.println(0.1*3);
-		
+
+		System.out.println(0.1 * 3);
+
 	}
 	
 	// 논리형 데이터 타입
@@ -91,15 +92,31 @@ public class Types {
 		
 		boolean b1 = true;
 		boolean b2 = false;
-		
+
 		System.out.println(b1);
 		System.out.println(b2);
 		// 비교 연산, 논리연산의 결과로 활용된다.
-		
-		int a = 7, b=3;
-		boolean result = a>b;
+
+		int a = 7, b = 3;
+		boolean result = a > b;
 		System.out.println(result);
 		
 	}
 		
+	
+	// 문자형 데이터 타입
+	private static void charEx() {
+		// 부호가 없는 정수 코드
+		char ch1 = 'A';
+		char ch2 = '한';
+//		char ch3 = "하";
+
+		System.out.println(ch1);
+		System.out.println(ch2);
+		System.out.println(ch1+ch2);
+		
+		String str= "A한";
+		System.out.println(str);
+		
+	}
 }

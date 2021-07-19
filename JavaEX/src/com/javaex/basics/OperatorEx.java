@@ -3,7 +3,8 @@ package com.javaex.basics;
 public class OperatorEx {
 
 	public static void main(String[] args) {
-		arithOperEx();
+//		arithOperEx();
+		logioperEx();
 	}
 
 	// 연산자 : 산술연산
@@ -41,4 +42,58 @@ public class OperatorEx {
 		System.out.println("num : " + num);
 
 	}
+
+	// 비교연산과 논리연산
+	private static void logioperEx() {
+		int a = 7;
+		double b = 3;
+
+		// 비교연산자 : > , >= , <, <= , ==(같다), !=(같지않다)
+		System.out.println("a > b ? : " + (a > b));
+		System.out.println("a와 b가 같습니까? : " + (a == b));
+		System.out.println("a와 b가 다릅니가? : " + (a != b));
+
+		System.out.println("형변환 비교 TEST");
+		int a1 = 3;
+		double a2 = 3.222;
+		float a3 = 3.222f;
+		System.out.println("int a1 = double a2? : " + (a1 == a2));
+		System.out.println("int a1 = int a2? : " + (a1 == (int) a2));
+		System.out.println("double a2 : " + a2);
+		System.out.println("float a3 : " + a3);
+		System.out.println((double) a3); // 형변환시 데이터값이 변경할 수있다. 주의
+		System.out.println("double a2= double a3? : " + (a2 == (double) a3));
+
+		// 논리연산자 : 논리곱(AND:&&), 논리합(OR:||), 논리부정(NOT:!)
+		int num = 5;
+
+		// num : 0초과, 10미만의 값인가?
+
+		// 조건 1 ; num > 0
+		// 조건 2 : num < 10
+		// 결과 : 조건 1 and 조건 2
+		boolean r1 = num > 0;
+		boolean r2 = num < 10;
+		boolean r1Andr2 = r1 && r2;
+		System.out.println("r1 && r2 = " + r1Andr2);
+		System.out.println("num이 0초과 10미만인가? : " + (num > 0 && num < 10));
+
+		// num : 0이하이거나, 10이상의 값인가?
+		// 조건 1 = num <= 0;
+		// 조건 2 = num >= 10;
+		// 조건 1 or 조건 2?
+		boolean r3 = num <= 0;
+		boolean r4 = num >= 10;
+		boolean r3Andr4 = r3 || r4;
+		System.out.println("r3 || r4 = " + r3Andr4);
+		
+		// 논리부정
+		// num > 0 && num < 10 -> 논리부정
+		// num <=0 || num >=10
+		boolean rNot = !(num > 0 && num < 10);
+		System.out.println("num이 0초과 , 10미만의 값인가? : " + rNot);
+		
+
+	}
+
 }

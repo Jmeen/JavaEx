@@ -5,7 +5,9 @@ public class OperatorEx {
 	public static void main(String[] args) {
 //		arithOperEx();
 //		logioperEx();
-		bitOperEx();
+//		bitOperEx();
+//		bitShiftEx();
+		conditionaloperEX();
 	}
 
 	// 연산자 : 산술연산
@@ -117,12 +119,35 @@ public class OperatorEx {
 		result = b1 ^ b2; // 배타적 논리합
 		System.out.println("b1^b2 " + Integer.toBinaryString(result));
 
-//		int b8 = 1, b9 = 2;
-//		System.out.println(Integer.toBinaryString(b1));
-//		System.out.println(Integer.toBinaryString(b2));
-//		System.out.println(Integer.toBinaryString(b1&b2));
-//		System.out.println(Integer.toBinaryString(b1|b2));		
-//		System.out.println(Integer.toBinaryString(b1^b2));	
+	}
+
+	// 비트쉬프트
+	private static void bitShiftEx() {
+		// 비트 단위로 이동
+		int val = 1;
+		System.out.println(Integer.toBinaryString(val));
+		System.out.println(Integer.toBinaryString(val << 1)); // 왼쪽으로 1비트
+		System.out.println(Integer.toBinaryString(val << 4)); // 왼쪽으로 4비트
+
+		val = -2010;
+		System.out.println(Integer.toBinaryString(val));
+		System.out.println(Integer.toBinaryString(val >> 2)); // 오른쪽으로 2비트
+		System.out.println(Integer.toBinaryString(val >>> 2)); // 숫자의미X 바이너리 데이터 형태
+	}
+
+	// 3항 연산자
+	private static void conditionaloperEX() {
+		// 문법 : 조건식 ? 참일때의 값 또는 식 : 거짓일 경우 값 또는 식
+		int _a = 10;
+		// _a가 짝수면 "짝수", 홀수면 '홀수 출력
+		String r = _a % 2 == 0 ? "짝수" : "홀수";
+		System.out.println(_a + "는 " + r);
+
+		int score = 80;
+		// 만약 점수가 80 >= good! , >=50 = pass , <50 = Fail
+		String r1 = score >= 50 ? "Good" : score >= 50 ? "Pass" : "Fail";
+		System.out.println("Score:"+score + ", 결과:" + r1);
 
 	}
+
 }

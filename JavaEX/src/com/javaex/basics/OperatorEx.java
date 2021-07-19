@@ -4,7 +4,8 @@ public class OperatorEx {
 
 	public static void main(String[] args) {
 //		arithOperEx();
-		logioperEx();
+//		logioperEx();
+		bitOperEx();
 	}
 
 	// 연산자 : 산술연산
@@ -86,14 +87,42 @@ public class OperatorEx {
 		boolean r4 = num >= 10;
 		boolean r3Andr4 = r3 || r4;
 		System.out.println("r3 || r4 = " + r3Andr4);
-		
+
 		// 논리부정
 		// num > 0 && num < 10 -> 논리부정
 		// num <=0 || num >=10
 		boolean rNot = !(num > 0 && num < 10);
 		System.out.println("num이 0초과 , 10미만의 값인가? : " + rNot);
-		
 
 	}
 
+	// 비트연산자
+	private static void bitOperEx() {
+		// 하드웨어 제어, 이미지 처리
+		// 미세하기 비트 단위 데이터 제어에 활용
+		byte b1 = 0b1101;
+		byte b2 = 0b0111;
+		System.out.println("b1 :" + Integer.toBinaryString(b1));
+		System.out.println("b2 :" + Integer.toBinaryString(b2));
+
+		int result = b1 & b2; // 비트 논리곱
+		System.out.println("b1&b2 = " + Integer.toBinaryString(result));
+
+		result = b1 | b2; // 비트 논리합
+		System.out.println("b1|b2 = " + Integer.toBinaryString(result));
+
+		result = ~b1; // 비트 논리 부정
+		System.out.println("~b1 = " + Integer.toBinaryString(result));
+
+		result = b1 ^ b2; // 배타적 논리합
+		System.out.println("b1^b2 " + Integer.toBinaryString(result));
+
+//		int b8 = 1, b9 = 2;
+//		System.out.println(Integer.toBinaryString(b1));
+//		System.out.println(Integer.toBinaryString(b2));
+//		System.out.println(Integer.toBinaryString(b1&b2));
+//		System.out.println(Integer.toBinaryString(b1|b2));		
+//		System.out.println(Integer.toBinaryString(b1^b2));	
+
+	}
 }

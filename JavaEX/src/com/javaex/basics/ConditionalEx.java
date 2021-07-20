@@ -6,12 +6,15 @@ public class ConditionalEx {
 
 	public static void main(String[] args) {
 
+		String day;
+
 //		conditionalEX();
 //		ifelseifelseEx();
 //		swithEx();
 //		switchExam();
-		conditionalPractice01();
-		conditionalPractice02();
+//		conditionalPractice01();
+//		conditionalPractice02();
+		switchEx3("sunday");
 	}
 
 	private static void conditionalEX() {
@@ -125,10 +128,59 @@ public class ConditionalEx {
 	}
 
 	private static void conditionalPractice01() {
-
+		Scanner sc = new Scanner(System.in);
+		System.out.println("정수를 입력하세요");
+		int num = sc.nextInt();
+		if (num % 3 == 0) {
+			System.out.println("3의 배수입니다.");
+		} else {
+			System.out.println(num + "은 3의 배수가 아닙니다.");
+		}
+		sc.close();
 	}
 
 	private static void conditionalPractice02() {
-
+		Scanner sc = new Scanner(System.in);
+		System.out.print("점수를 입력하세요 : ");
+		int score = sc.nextInt();
+		String grade;
+		if (score >= 90) {
+			grade = "A";
+		} else if (score >= 80) {
+			grade = "B";
+		} else if (score >= 70) {
+			grade = "C";
+		} else if (score >= 60) {
+			grade = "D";
+		} else {
+			grade = "F";
+		}
+		System.out.println("당신의 등급은 " + grade + "입니다.");
+		sc.close();
 	}
+
+	private static void switchEx3(String day) {
+		// TODO : 이 코드는 나중에 enum타입으로 개선해 볼 예정
+		String act;
+		switch (day) {
+		case "sunday":
+			act = "짜파게티 요리사";
+			break;
+		case "monday":case "tuesday":case "wednesday":case "thursday":
+			act = "오늘은 열공";
+			break;
+		case "friday":
+			act = "불급불금";
+			break;
+		case "saturday ":
+			act = "토요일은 쉬는날";
+			break;
+		default:
+			act = "????????뭐";
+			break;
+		}
+		System.out.println(day+"는 "+act);
+		
+	}
+
 }

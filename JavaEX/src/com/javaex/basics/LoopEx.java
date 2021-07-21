@@ -11,7 +11,8 @@ public class LoopEx {
 //		forEx()	;
 //		loopPractice();
 //		loopPractice01();
-		forStar();
+//		forStar();
+		findInt();
 	}
 
 	private static void whileEx() {
@@ -69,7 +70,6 @@ public class LoopEx {
 
 		for (int i = 0; i <= 20; i++) {
 			if ((i % 2 == 0) || (i % 3 == 0)) {
-				continue;
 			}
 			System.out.println(i);
 		}
@@ -77,12 +77,12 @@ public class LoopEx {
 
 	private static void loopPractice01() {
 		// 구구단 for 문 이용 출력
-//		for (int i = 2; i < 10; i++) {
-//			for (int x = 1; x < 10; x++) {
-//				System.out.println(i + " x " + x + " = " + i * x);
-//			}
-//			System.out.println("===========");
-//		}
+		for (int i = 2; i < 10; i++) {
+			for (int x = 1; x < 10; x++) {
+				System.out.println(i + " x " + x + " = " + i * x);
+			}
+			System.out.println("===========");
+		}
 
 		// 구구단 while문 이용 출력
 		int i = 2, x = 2;
@@ -116,6 +116,30 @@ public class LoopEx {
 			a--;
 			b = a;
 		}
+
+		int row = 1;
+		while (row <= 6) {
+			int col = 1;
+			while (col <= row) {
+				System.out.print("*");
+				col++;
+			}
+			System.out.println("");
+			row++;
+		}
 	}
 
+	private static void findInt() {
+		int a = 1;
+		while (true) {
+			if ((a % 6 == 0) && (a % 14 == 0)) {
+				System.out.println(a);
+				break;
+			}
+			a++;
+		}
+
+		
+
+	}
 }

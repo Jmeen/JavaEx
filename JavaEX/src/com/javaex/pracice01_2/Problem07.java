@@ -10,7 +10,7 @@ public class Problem07 {
 		System.out.println("    [숫자맞추기게임 시작]     ");
 		System.out.println("========================");
 		label: while (true) {
-			int ran = (int) (Math.random() * 100);
+			int ran = (int) (Math.random() * 100+1);
 			System.out.println(ran);
 			while (true) {
 				System.out.print(">>>");

@@ -20,14 +20,20 @@ public class BookShop {
 
 		System.out.println("*****도서 정보 출력하기******");
 		displayBookInfo(books);
-
 		Scanner scanner = new Scanner(System.in);
+
 		System.out.print("대여 하고 싶은 책의 번호를 입력하세요:");
 		int num = scanner.nextInt();
 		scanner.close();
 
 		// (1) 입력된 번호에 맞는 책을 찾아 대여 되었음(상태코드=0)을 체크 합니다.
-		books[num - 1].rent();
+//		books[num - 1].rent();
+
+		for (Book book : books ) {
+			if (num == book.getBookNo()) {
+				book.rent();
+			}
+		}
 
 		System.out.println("*****도서 정보 출력하기******");
 		displayBookInfo(books);

@@ -12,6 +12,10 @@ public class Book {
 		this.author = author;
 		this.stateCode = 1;
 	}
+	
+	public int getBookNo() {
+		return this.bookNo;
+	}
 
 	public void rent() {
 		if (this.stateCode == 1) {

@@ -20,11 +20,11 @@ public class CharStreamEx {
 			freader = new FileReader(filename);
 			int data = 0;
 			while ((data = freader.read()) != -1) {
-				System.out.print(data);
-				System.out.println();
-			}
+				System.out.print((char) (data));
 
-			
+			}
+			System.out.println();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

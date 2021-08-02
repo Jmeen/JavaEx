@@ -13,8 +13,6 @@ import java.util.Scanner;
 public class contactmanager {
 	static final String rootPath = System.getProperty("user.dir") + "\\files\\";
 	static final String address = rootPath + "PhoneDB.txt";
-	static final String address2 = rootPath + "PhoneDB2.txt";
-	static int count = 0;
 
 	public static void main(String[] args) {
 		List<PersonInfo> person = new ArrayList<>();
@@ -25,17 +23,15 @@ public class contactmanager {
 
 	}
 
-	private static void run(List person) {
+	private static void run(List<PersonInfo> person) {
 		boolean runx = true;
-		int num = 0, del = 0;
+		int num = 0;
 		String serchstr = "";
-
 		System.out.println("***************************************");
 		System.out.println("*          전화번호 관리 프로그램           *");
 		System.out.println("***************************************");
 		while (runx) {
 			Scanner sc = new Scanner(System.in);
-
 			System.out.println("1.리스트   2.등록   3.삭제   4.검색   5.종료");
 			System.out.println("---------------------------------------");
 			System.out.print("메뉴번호 >> ");
@@ -57,7 +53,6 @@ public class contactmanager {
 				System.out.println();
 				System.out.println("<3. 삭제>");
 				System.out.print("번호 >> ");
-
 				delete(sc, person);
 				break;
 			case 4:
@@ -66,7 +61,7 @@ public class contactmanager {
 				System.out.print("이름 >> ");
 				serchstr = sc.next();
 				search(person, serchstr);
-				del = sc.nextInt();
+				System.out.println();
 				break;
 			case 5:
 				System.out.println();
@@ -85,57 +80,53 @@ public class contactmanager {
 	}
 
 	// 이름에서 단어를 포함하는 리스트 검색
-	private static void search(List person, String str) {
+	private static void search(List<PersonInfo> person, String str) {
 		for (int i = 0; i < person.size(); i++) {
 			PersonInfo serchperson = (PersonInfo) person.get(i);
 			if (serchperson.getName().contains(str)) {
 				System.out.println(serchperson.toString());
-				continue;
 			}
 		}
+
 	}
 
 	// 선택한 번호 삭제
-	private static void delete(Scanner sc, List person) {
+	private static void delete(Scanner sc, List<PersonInfo> person) {
 		int del = sc.nextInt();
 		person.remove(del - 1);
 		update(person);
-
-		System.out.println();
-		showinfo(person);
 		System.out.println();
 		wirteTxt(person);
+		System.out.println("[삭제되었습니다.]");
 	}
 
 	// 리스트 출력
-	private static void showinfo(List person) {
+	private static void showinfo(List<PersonInfo> person) {
 		for (int i = 0; i < person.size(); i++) {
 			System.out.println(person.get(i).toString());
 		}
 	}
 
 	// 리스트에 추가
-	private static void add(Scanner sc, List person) {
+	private static void add(Scanner sc, List<PersonInfo> person) {
 		String name;
-		String cell;
-		String home;
+		String hp;
+		String tel;
 		System.out.print(">이름    : ");
 		name = sc.next();
 		System.out.print(">휴대전화 : ");
-		cell = sc.next();
+		hp = sc.next();
 		System.out.print(">집전화   : ");
-		home = sc.next();
-		person.add(new PersonInfo(name, cell, home));
+		tel = sc.next();
+		person.add(new PersonInfo(name, hp, tel));
 		update(person);
 		System.out.println();
-		showinfo(person);
-		System.out.println();
 		wirteTxt(person);
+		System.out.println("[등록되었습니다.]");
 	}
 
 	// 번호 순차대로 다시 넘버링
-	private static void update(List person) {
-		int idx = 1;
+	private static void update(List<PersonInfo> person) {
 		for (int i = 0; i < person.size(); i++) {
 			PersonInfo n = (PersonInfo) person.get(i);
 			n.setNum(i + 1);
@@ -143,7 +134,7 @@ public class contactmanager {
 	}
 
 	// 텍스트 읽어오기
-	private static List readTxt(List person) {
+	private static List<PersonInfo> readTxt(List<PersonInfo> person) {
 		Reader fr = null;
 		BufferedReader br = null;
 		try {
@@ -152,7 +143,6 @@ public class contactmanager {
 			String line = "";
 			String[] words = new String[3];
 			while ((line = br.readLine()) != null) {
-				count++;
 				words = line.split(",");
 				person.add(new PersonInfo(words[0], words[1], words[2]));
 			}
@@ -169,7 +159,7 @@ public class contactmanager {
 		return person;
 	}
 
-	private static void wirteTxt(List person) {
+	private static void wirteTxt(List<PersonInfo> person) {
 		Writer fw = null;
 		BufferedWriter bw = null;
 

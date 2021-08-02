@@ -3,14 +3,13 @@ package com.java.miniproject;
 public class PersonInfo {
 	private int num;
 	private String name;
-	private String cellphone;
-	private String homephone;
+	private String hp;
+	private String tel;
 
-	public PersonInfo(String name, String cellphone, String homephone) {
-		this.num = num;
+	public PersonInfo(String name, String hp, String tel) {
 		this.name = name;
-		this.cellphone = cellphone;
-		this.homephone = homephone;
+		this.hp = hp;
+		this.tel = tel;
 	}
 
 	public int getNum() {
@@ -30,28 +29,28 @@ public class PersonInfo {
 	}
 
 	public String getCellphone() {
-		return cellphone;
+		return hp;
 	}
 
-	public void setCellphone(String cellphone) {
-		this.cellphone = cellphone;
+	public void setCellphone(String hp) {
+		this.hp = hp;
 	}
 
 	public String getHomephone() {
-		return homephone;
+		return tel;
 	}
 
-	public void setHomephone(String homephone) {
-		this.homephone = homephone;
+	public void setHomephone(String tel) {
+		this.tel = tel;
 	}
 
 	public void showInfo() {
-		System.out.printf("%d. %s\t%s\t%s%n", num, name, cellphone, homephone);
+		System.out.printf("%d. %s\t%s\t%s%n", num, name, hp, tel);
 	}
 
 	@Override
 	public String toString() {
-		String result = String.format("%d. %s\t%s\t%s", num, name, cellphone, homephone);
+		String result = String.format("%d. %s\t%s\t%s", num, name, hp, tel);
 		return result;
 	}
 

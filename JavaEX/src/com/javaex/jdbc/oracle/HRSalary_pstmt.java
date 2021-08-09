@@ -34,7 +34,7 @@ public class HRSalary_pstmt {
 			while (rs.next()) {
 				String empname = rs.getString("name");
 				int empsalary = rs.getInt("salary");
-				System.out.printf("%s		%8d%n", empname, empsalary);
+				System.out.printf("%-20s %d%n", empname, empsalary);
 			}
 
 		} catch (ClassNotFoundException e) {

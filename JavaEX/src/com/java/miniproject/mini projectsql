@@ -1,0 +1,29 @@
+CREATE TABLE PHONE_BOOK(
+    id NUMBER(10) Primary KEY,
+    name VARCHAR2(10),
+    hp VARCHAR2(20),
+    tel VARCHAR2(20)
+    );
+
+desc phone_book;
+
+Create Sequence seq_phone_book
+    Start with 1
+    Increment by 1
+    maxvalue 1000000;
+    
+SELECT id, name, hp, tel FROM phone_book ORDER BY id;
+
+ALTER Sequence seq_phone_book
+    Increment by 1
+    maxvalue 1000000;
+    
+SELECT * FROM USER_SEQUENCEs;
+
+INSERT INTO phone_book VALUES(seq_phone_book.NEXTVAL,'임재민','010-1234-5678','02-2222-4445');
+INSERT INTO phone_book VALUES(2,'고길동','010-1234-5678','02-2222-4445');
+commit;
+rollback;
+
+UPDATE phone_book SET name ='아', hp='010-9999-8888', tel='' WHERE id =3 ;
+

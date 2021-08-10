@@ -10,13 +10,20 @@ public class HRSalary_pstmt {
 		String dburl = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
 		String dbuser = "HR";
 		String dbpass = "hr";
-		Connection conn = null;
+		Connection conn = null; 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		System.out.print("최소 급여를 입력해 주세요 >> ");
 		int minnum = sc.nextInt();
 		System.out.print("최대 급여를 입력해 주세요 >> ");
 		int maxnum = sc.nextInt();
+		
+		// 만약 최대값/최소값을 엉뚱하게 넣었을 경우. 서로 값을 변경한다.
+		if (minnum > maxnum) {
+			int temp = minnum;
+			minnum = maxnum;
+			maxnum = temp;
+		}
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
